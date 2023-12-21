@@ -9,7 +9,7 @@ A project for fetching API and using the data to score students
 
 ## Live Demo
 
-[Live Demo Link](https://ifeanyins.github.io/LEADERBoardApi/)
+[Live Demo Link](https://ifeanyins.github.io/LEADERBoardApi/dist)
 
 ## Getting Started
 
