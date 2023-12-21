@@ -6,6 +6,29 @@
     <title>LeaderBoardApi</title>
 <script defer src="bundle.js"></script></head>
 <body>
-    
+    <div id="df-container">
+        <h1>LeadBoard</h1>
+        <div class="score-display">
+            <div class="message"></div>
+            <div id="score-header">
+                <h2>Recent Scores</h2>
+                <button type="submit" id="refresh-btn">Refresh</button>
+            </div>
+            <div id="score-length"></div>
+            <!-- score display -->
+            <div id="display-score">
+                <ul></ul>
+            </div>
+        </div>
+
+        <form id="form">
+            <label>Add your score</label>
+            <label for="name"></label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="score"></label>
+            <input type="text" id="score" placeholder="Enter your score">
+            <button id="submit-btn">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
