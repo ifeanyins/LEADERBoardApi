@@ -6,29 +6,33 @@
     <title>LeaderBoardApi</title>
 <script defer src="bundle.js"></script></head>
 <body>
-    <div id="df-container">
-        <h1>LeadBoard</h1>
-        <div class="score-display">
-            <div class="message"></div>
-            <div id="score-header">
-                <h2>Recent Scores</h2>
-                <button type="submit" id="refresh-btn">Refresh</button>
-            </div>
-            <div id="score-length"></div>
-            <!-- score display -->
-            <div id="display-score">
-                <ul></ul>
-            </div>
-        </div>
+    <h1>LeaderBoard</h1>
 
-        <form id="form">
-            <label>Add your score</label>
-            <label for="name"></label>
-            <input type="text" id="name" placeholder="Enter your name">
-            <label for="score"></label>
-            <input type="text" id="score" placeholder="Enter your score">
-            <button id="submit-btn">Submit</button>
-        </form>
+    <div class="df-container">
+        <div class="score-display">
+            <p class="message"></p>
+            <div class="score-heading">
+                <h3>Recent Scores</h3>
+                <button type="submit" id="refresh">Refresh</button>
+            </div>
+            <!-- the score display section -->
+            <div id="score-length"></div>
+            <div class="show-score">
+                <ul id="score-list">
+                </ul>
+            </div>
+      </div>
+  
+      <!-- the section for adding scores -->
+      <form id="form" class="add">
+        <label>Add your score</label>
+        <br>
+        <input type="text" id="name" placeholder="Your name">
+        <br>
+        <input type="number" id="score" placeholder="Your score">
+        <br>
+        <button type="button" id="submit">Submit</button>
+      </form>
     </div>
 </body>
 </html>

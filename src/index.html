@@ -6,6 +6,33 @@
     <title>LeaderBoardApi</title>
 </head>
 <body>
-    
+    <h1>LeaderBoard</h1>
+
+    <div class="df-container">
+        <div class="score-display">
+            <p class="message"></p>
+            <div class="score-heading">
+                <h3>Recent Scores</h3>
+                <button type="submit" id="refresh">Refresh</button>
+            </div>
+            <!-- the score display section -->
+            <div id="score-length"></div>
+            <div class="show-score">
+                <ul id="score-list">
+                </ul>
+            </div>
+      </div>
+  
+      <!-- the section for adding scores -->
+      <form id="form" class="add">
+        <label>Add your score</label>
+        <br>
+        <input type="text" id="name" placeholder="Your name">
+        <br>
+        <input type="number" id="score" placeholder="Your score">
+        <br>
+        <button type="button" id="submit">Submit</button>
+      </form>
+    </div>
 </body>
 </html>
