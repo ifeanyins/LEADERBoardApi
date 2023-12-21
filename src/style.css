@@ -1,6 +1,39 @@
 body{
-    background-color: brown;
+    background-color: beige;
+    font-family: sans-serif;
+}
+.df-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.score-heading {
+    display: flex;
+    align-items: center;
 }
 
-   ul {  bottom: auto;
-}
+#form {
+    background-color: wheat;
+    border-radius: 7px;
+    box-shadow: 0 0 3px #5e5e5e;
+    padding: 40px;
+    width: 20%;
+  }
+  
+  input {
+    background-color: wheat;
+    border-width: 0 0 0;
+    border-color: #282828;
+    outline: 0;
+    padding: 12px 10px;
+  }
+  
+  input:focus {
+    border-width: 0 0 1px;
+    border-color: brown;
+    width: 100%;
+  }
+  
+  input::placeholder {
+    color: black;
+  }
