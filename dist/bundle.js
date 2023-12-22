@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./module/api.js":
+/*!***********************!*\
+  !*** ./module/api.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   GetScores: () => (/* binding */ GetScores),\n/* harmony export */   NewApiGame: () => (/* binding */ NewApiGame)\n/* harmony export */ });\n// first function should be getting the finished api (the api already containing the user and the score)\r\nconst url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/owQWvuBZRBl6oZNoQKqG/scores/'; //API\r\n/** first function to generate the API */\r\nconst GetScores = async () => {\r\n    const getScores = await fetch (url).then((res) => res.json());\r\n    return getScores;\r\n};\r\n// second function should be abou the generation of data through the input\r\n/** second function to generate the API through input */\r\n\r\nconst NewApiGame = async () =>{\r\n    const name = document.getElementById(\"name\");\r\n    const score = document.getElementById(\"score\");\r\n\r\n    await fetch(url, {\r\n        method: 'POST',\r\n        headers: {\r\n            'content-Type': 'application/json',\r\n        },\r\n        body: JSON.stringify({\r\n            user:name.value,\r\n            score:score.value\r\n        })\r\n    });\r\n};\r\n\n\n//# sourceURL=webpack://leaderboardapi/./module/api.js?");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
@@ -116,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://leaderboardapi/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../module/api */ \"./module/api.js\");\n\r\n\r\nconst name = document.getElementById(\"name\");\r\nconst score = document.getElementById(\"score\");\r\nconst submit = document.getElementById(\"submit\");\r\nconst message = document.querySelector(\".message\");\r\nconst refresh = document.getElementById(\"refresh\");\r\n\r\n// for the first api store it inside a new variable , loop through it and put the contents inside a new li, get the score length\r\n\r\nconst getAllScores = async () => {\r\n    const allScores = await (0,_module_api__WEBPACK_IMPORTED_MODULE_1__.GetScores)();\r\n    // function created to sort the scores numerically (ascending to descending order) \r\n    allScores.result.sort((a, b) => b.score - a.score);\r\n    allScores.result.forEach(item => {\r\n        const scoreList = document.getElementById('score-list');\r\n        const scoreLI = document.createElement('li');\r\n        scoreLI.innerHTML = `${item.user}: ${item.score}`;\r\n        scoreList.appendChild(scoreLI);\r\n    });\r\n    const scoreLength = allScores.result.length;\r\n    const scorelength = document.getElementById('score-length');\r\n    scorelength.innerHTML = `Total Number of Users : ${scoreLength}`;\r\n}\r\n\r\n// event handler function \r\n\r\nfunction Scores (e) {\r\n    ;(0,_module_api__WEBPACK_IMPORTED_MODULE_1__.NewApiGame)();\r\n    e.preventDefault();\r\n\r\n    if(name.value === \"\" || score.value === \"\"){\r\n        message.textContent = 'ERROR !! Add a valid user name and score';\r\n        message.className = 'error';\r\n        message.style.color = 'bisque';\r\n        message.style.display = 'block';\r\n        setTimeout(() => {\r\n            message.style.display = 'none';\r\n        }, 5000);\r\n    } else {\r\n        message.textContent = 'Succesfully Added !! Click refresh to show';\r\n        message.className = 'success';\r\n        message.style.color = 'bisque';\r\n        message.style.display = 'block';\r\n        setTimeout(() => {\r\n            message.style.display = 'none';\r\n        }, 5000);\r\n    }\r\n    name.value = \"\";\r\n    score.value = \"\";\r\n}\r\ngetAllScores();\r\nsubmit.addEventListener(\"click\", Scores);\r\nrefresh.addEventListener(\"click\", () => {\r\n    window.location.reload()\r\n});\r\n\n\n//# sourceURL=webpack://leaderboardapi/./src/index.js?");
 
 /***/ })
 

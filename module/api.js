@@ -23,3 +23,4 @@ const NewApiGame = async () =>{
         })
     });
 };
+export {GetScores, NewApiGame}
