@@ -11,29 +11,52 @@ body{
     display: flex;
     align-items: center;
 }
-
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+h3{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: x-large;
+    margin-right: 20px;
+}
+.show-score {
+   border: 2px solid #3D1C0B;
+}
+li {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: larger;
+    padding: 10px 5px;
+    margin-right: 10px;
+}
+li:nth-child(even){
+    background-color: #815137;
+}
 #form {
     background-color: wheat;
     border-radius: 7px;
     box-shadow: 0 0 3px #5e5e5e;
     padding: 40px;
     width: 20%;
-  }
+}
   
-  input {
+input {
     background-color: wheat;
     border-width: 0 0 0;
     border-color: #282828;
     outline: 0;
     padding: 12px 10px;
-  }
+}
   
-  input:focus {
+input:focus {
     border-width: 0 0 1px;
     border-color: brown;
     width: 100%;
-  }
+}
   
-  input::placeholder {
+input::placeholder {
     color: black;
-  }
+}
